@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "name": "ArrayLists - Dynamic Arrays Test",
+      "setup": "./gradlew arraylists-dynamicarrays-test --rerun-tasks",
+      "run": "gradle test",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Modifying Arrays Test",
+      "setup": "./gradlew arrays-modifyingarrays-test --rerun-tasks",
+      "run": "gradle test",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Manipulating Arrays - Dynamic Lists Test",
+      "setup": "./gradlew manipulatingarrays-dynamiclists-test --rerun-tasks",
+      "run": "gradle test",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Dynamic String Test",
+      "setup": "./gradlew strings-dynamicstrings-test --rerun-tasks",
+      "run": "gradle test",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}
