@@ -21,8 +21,12 @@ public class Application {
         // Create a new ArrayList instance
         // Add each of the foods to the list
         // Then return it
-
-        return null;
+        ArrayList<String> foodList = new ArrayList<>();
+        foodList.add(food1);
+        foodList.add(food2);
+        foodList.add(food3);
+        foodList.add(food4);
+        return foodList;
     }
 
 
@@ -32,7 +36,8 @@ public class Application {
     public static int findTheSizeOfArrayList(ArrayList<String> favoriteFood) {
         // Find the size of favoriteFood using the pre-defined method in Java
         // Return the size
-        return 0;
+        int result = favoriteFood.size();
+        return result;
     }
 
 
@@ -47,8 +52,8 @@ public class Application {
     ) {
         // Access the element at a particular index using the pre-defined method in Java
         // Return the element
-
-        return "";
+        String result = favoriteFood.get(index);
+        return result;
     }
 
 
@@ -58,8 +63,13 @@ public class Application {
     public static int countNumOfCakes(ArrayList<String> favoriteFood) {
         // Iterate through favoriteFood and count the number of times you find the String "Cake"
         // Return the number of occurrences
-
-        return 0;
+        int times = 0;
+        for(int i = 0; i <favoriteFood.size();i++){
+            if(favoriteFood.get(i).equals("Cake")) {
+                times++;
+            }
+            }
+        return times;
     }
 
 
@@ -74,6 +84,7 @@ public class Application {
             String replacementValue
     ) {
         // Replace the element at index with the replacementValue
+        favoriteFood.set(index, replacementValue);
 
     }
 
@@ -88,6 +99,8 @@ public class Application {
         // No need to return favoriteFood
         // Hint: Don't use the ArrayList sort method, there is an easier one inside Collections
         // Google around to find it.
+
+        Collections.sort(favoriteFood);
     }
 
 
@@ -98,7 +111,8 @@ public class Application {
     public static String[] convertArrayListToStringArray(ArrayList<String> favoriteFood) {
         // Convert the ArrayList to a String[] array
         // Return the new String[] array
-        return null;
+        String[] foodFavorites = favoriteFood.toArray(new String[]{});
+        return foodFavorites;
     }
 
 
@@ -109,7 +123,8 @@ public class Application {
     public static ArrayList<String> convertStringArrayToArrayList(String[] inputStrings) {
         // Convert inputStrings to an ArrayList
         // Return the ArrayList
-        return null;
+        ArrayList<String> converted = new ArrayList<>(Arrays.asList(inputStrings));
+        return converted;
     }
 
     public static void main(String[] args) {
