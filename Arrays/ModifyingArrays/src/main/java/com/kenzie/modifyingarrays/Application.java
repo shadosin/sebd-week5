@@ -1,6 +1,7 @@
 package com.kenzie.modifyingarrays;
 
 import java.util.Arrays;
+import java.util.Random;
 
 import org.apache.commons.lang3.ArrayUtils;
 
@@ -19,7 +20,10 @@ public class Application {
 
     public static void incrementEveryNumber(int[] array) {
         // Increment every number in the array by one
-
+        for(int i = 0; i < array.length; i++){
+            array[i] +=1;
+        }
+        System.out.println(Arrays.toString(array));
     }
 
     /*************************************
@@ -29,7 +33,11 @@ public class Application {
 
     public static void fillWithRandomNumbers(int[] array) {
         // Fill the array with random positive numbers up to 27 (Values from 1 to 27)
-
+        Random random = new Random();
+        for(int i=0; i < array.length; i++){
+            array[i]=random.nextInt(27)+1;
+        }
+        System.out.println(Arrays.toString(array));
     }
 
     /*************************************
@@ -47,8 +55,20 @@ public class Application {
         // Then, create a new array of that size
         // Finally, loop through the array again and copy the numbers over to the new array.
         // Return the new array
-
-        int[] result = new int[0];
+        int count=0;
+        for(int i =0; i < array.length; i++){
+            if(array[i] >= 10){
+                count ++;
+            }
+        }
+        int tracker=0;
+        int[] result = new int[count];
+        for(int j=0; j < array.length; j++){
+            if(array[j] >=10){
+                result[tracker] = array[j];
+                tracker++;
+            }
+        }
 
         return result;
     }
@@ -60,8 +80,11 @@ public class Application {
 
     public static int addAllNumbers(int[] array) {
         // Add every number in the array and return the sum
-
-        return 0;
+        int sum=0;
+        for( int i= 0; i < array.length; i++){
+            sum += array[i];
+        }
+        return sum;
     }
 
     /*************************************
@@ -71,7 +94,11 @@ public class Application {
 
     public static void replaceAll(String[] words, String wordToReplace, String newValue) {
         // Replace all instances of the given wordToReplace in the words array with the new value
-
+        for(int i=0; i < words.length; i++){
+            if(words[i].equals(wordToReplace)){
+                words[i] = newValue;
+            }
+        }
     }
 
     /*************************************
@@ -83,7 +110,12 @@ public class Application {
         // Reverse the order of every element in the array. This should be done in-place
         // This should be done WITHOUT using ArrayUtils.reverse()
         // Hint, you will need to create a "temp" variable to hold one item at a time while you swap items.
-
+    int temp=0;
+    for(int i=0; i < array.length/2; i++){
+        temp = array[i];
+        array[i]= array[array.length-i-1];
+        array[array.length-i-1] = temp;
+    }
 
     }
 
@@ -95,7 +127,7 @@ public class Application {
 
     public static void reverseString(String[] words) {
         // Reverse the order of every element in the array.
-
+        ArrayUtils.reverse(words);
     }
 
     /*************************************
@@ -109,8 +141,9 @@ public class Application {
         // Note that the number may occur multiple times in the array, you should
         // only remove the LAST occurrence of the number.
         // Hint: You should be able to do this using two different ArrayUtils methods together...
-
-        int[] result = null;
+        int indexToRemove = ArrayUtils.lastIndexOf(array, numberToRemove);
+        array = ArrayUtils.remove(array, indexToRemove);
+        int[] result = array;
 
         return result;
     }

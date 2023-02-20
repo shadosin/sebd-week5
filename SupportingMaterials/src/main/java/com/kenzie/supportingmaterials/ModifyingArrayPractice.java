@@ -25,7 +25,27 @@ public class ModifyingArrayPractice {
 
     // Method to add the new element to the old array
     public static int[] addElement(int[] oldArray, int element) {
-        // Code to copy oldArray and add one newValue element here
-        return null;
+        int newArray[] = new int[oldArray.length+1];
+        int newArrayIndex=0;
+        for(int oldArrayIndex=0; oldArrayIndex < oldArray.length; oldArrayIndex++){
+            if(oldArrayIndex == element){
+                newArray[newArrayIndex] = oldArray[oldArrayIndex];
+                newArrayIndex += 1;
+            }
+        }
+        return newArray;
+    }
+    public static int[] removeElement(int[] oldArray, int indexToRemove){
+        int newArray[] = new int[oldArray.length-1];
+        int newArrayIndex=0;
+        for(int oldArrayIndex=0; oldArrayIndex < oldArray.length; oldArrayIndex++){
+            if(oldArrayIndex != indexToRemove){
+                newArray[newArrayIndex] = oldArray[oldArrayIndex];
+                newArrayIndex += 1;
+            }
+        }
+
+
+        return newArray;
     }
 }
