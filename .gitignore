@@ -33,3 +33,9 @@ gradle.properties
 out
 
 .DS_Store
+
+*gif
+*js
+*css
+*html
+*xml
