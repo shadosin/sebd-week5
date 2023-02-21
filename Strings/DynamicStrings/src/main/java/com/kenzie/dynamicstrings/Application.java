@@ -12,7 +12,8 @@ public class Application {
     public static StringBuilder createStringBuilderWithName(String name) {
         // Create a StringBuilder and initialize it with the given name.
         // Return the StringBuilder object
-        return null;
+        StringBuilder built = new StringBuilder(name);
+        return built;
     }
 
     /*********************************
@@ -27,8 +28,14 @@ public class Application {
         //
         // Add each word separately using the .append method (don't use +)
         // Convert your StringBuilder instance into a string and return it.
+        StringBuilder list = new StringBuilder();
+        list
+                .append(item1 + ", ")
+                .append(item2 + ", ")
+                .append(item3 + ", ")
+                .append(item4);
 
-        return "";
+        return list.toString();
     }
 
     /*********************************
@@ -54,7 +61,12 @@ public class Application {
         // Hint: You will first have to determine the start and end index of the subString within the content
         //
         // When you are done, return the completed String
-        return null;
+        StringBuilder build = new StringBuilder(content);
+        int startIndex = build.indexOf(subString);
+        int endIndex = startIndex + subString.length();
+        build.replace(startIndex, endIndex, replacementValue);
+        String newValue = build.toString();
+        return newValue;
     }
 
     /*********************************
@@ -71,8 +83,14 @@ public class Application {
         //
         // Create a new StringBuild and use this to form your String.
         // You will need to iterate over the characters array, adding each item and the necessary other characters.
+        String joinedString = String.join(", ", characters);
+        StringBuilder heroes = new StringBuilder(joinedString);
+        heroes.insert(0, "My favorite characters are ");
+        heroes.append(".");
+        int index = heroes.lastIndexOf(",");
+        heroes.insert(index +1, " and");
 
-        return "";
+        return heroes.toString();
     }
 
     public static void main(String[] args) {
