@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.lang.StringBuilder;
 
+
 public class Application {
 
     public static void main(String[] args) {
@@ -25,5 +26,40 @@ public class Application {
         // Your output should exactly match the way these are formatted with spaces, commas, and the "and"
 
         // Your Code Here
+        Scanner userInput = new Scanner(System.in);
+        System.out.println("Greetings and Salutations! Please provide your list of invitees:");
+        System.out.println("When there are no more, please press enter");
+        ArrayList<String> invitees = new ArrayList<>();
+
+        while(true){
+            System.out.println("Please enter the name here:");
+            String name = userInput.nextLine();
+            if(name.equals("")){
+                break;
+            }
+            invitees.add(name);
+        }
+       StringBuilder finalList = new StringBuilder("You have invited: ");
+        int numOfAttendees = invitees.size();
+        if(numOfAttendees == 1){
+            finalList.append(invitees.get(0));
+        }else if(numOfAttendees == 2){
+            finalList
+                    .append(invitees.get(0))
+                    .append(" and ")
+                    .append(invitees.get(1));
+        }else if(numOfAttendees >=3){
+            for(int i=0; i < numOfAttendees-1; i++){
+                finalList
+                        .append(invitees.get(i))
+                        .append(", ");
+            }
+            finalList
+                    .append("and ")
+                    .append(invitees.get(numOfAttendees-1));
+
+
+        }
+        System.out.println(finalList.toString());
     }
-}
+    }
