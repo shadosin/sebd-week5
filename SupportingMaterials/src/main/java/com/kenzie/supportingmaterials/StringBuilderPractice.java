@@ -1,8 +1,5 @@
 package com.kenzie.supportingmaterials;
 
-
-import static jdk.internal.org.jline.utils.AttributedStringBuilder.append;
-
 public class StringBuilderPractice {
 
     /*********************************
