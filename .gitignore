@@ -23,6 +23,13 @@ gradle.properties
 /aws.xml
 *.class
 *.hprof
+
+*gif
+*js
+*css
+*html
+*xml
+
 out
 
 .DS_Store

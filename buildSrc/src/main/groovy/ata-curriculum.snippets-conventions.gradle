@@ -26,11 +26,13 @@ test {
   }
   finalizedBy jacocoTestReport // report is always generated after tests run
 }
+
 jacocoTestReport {
   dependsOn test // tests are required to run before generating the report
   reports {
-    xml.enabled true
-    html.enabled true
+    csv.required = false
+    html.destination(rootProject.file("Utilities/ATACheckstyle/configuration/checkstyle/report.html"))
+    xml.destination(rootProject.file("Utilities/ATACheckstyle/configuration/checkstyle/report.xml"))
   }
 }
 
@@ -49,6 +51,7 @@ tasks.register("staticchecks") {
 */
 checkstyle {
   toolVersion '8.17'
+  configDirectory = rootProject.file("Utilities/ATACheckstyle/configuration/checkstyle/checkstyle.xml")
   configFile = rootProject.file('Utilities/ATACheckstyle/configuration/checkstyle/checkstyle.xml')
   sourceSets = [sourceSets.main]
 }
@@ -71,7 +74,7 @@ spotbugsTest.enabled = false
 spotbugsMain.outputs.upToDateWhen { false }
 
 spotbugsMain.reports {
-  xml.enabled = false
+  xml.enabled = true
   html.enabled = true
 }
 
